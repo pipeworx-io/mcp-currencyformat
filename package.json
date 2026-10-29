@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-currencyformat",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Number & currency formatting MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-currencyformat": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "currencyformat"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-currencyformat.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/currencyformat",
   "pipeworx": {
-    "sourceHash": "v1-b02264908d0c71138bcd85af5784eb599fb9f9ac77be7e59f8fd8b035aa26351",
-    "sourceCommit": "60f04b68c347e970c6be94a53439d1364061fc06"
+    "mode": "gateway",
+    "slug": "currencyformat",
+    "gatewaySlug": "currencyformat",
+    "sourceHash": "v1-a9af195d9a32c6c35bcac92defdab36f1672ec6684e3a70500e867ac500b3b5d",
+    "sourceCommit": "0b3faaa4d85299a961dd86dea75a0f0e1dad280c"
   }
 }

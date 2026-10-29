@@ -1,0 +1,55 @@
+[
+  {
+    "name": "format_currency",
+    "description": "Format a number as localized currency (keyless, offline). E.g. amount 1234.5, currency \"EUR\", locale \"de-DE\" -> \"1.234,50 €\". `currency` is an ISO 4217 code.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "The monetary amount."
+        },
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 code, e.g. \"USD\", \"EUR\", \"JPY\"."
+        },
+        "locale": {
+          "type": "string",
+          "description": "BCP-47 locale (default \"en-US\"), e.g. \"de-DE\", \"ja-JP\"."
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ]
+    }
+  },
+  {
+    "name": "format_number",
+    "description": "Format a number with grouping, fixed decimals, as a percentage, or in compact notation (keyless, offline). style = \"decimal\" (default), \"percent\", or \"compact\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "number",
+          "description": "The number to format."
+        },
+        "locale": {
+          "type": "string",
+          "description": "BCP-47 locale (default \"en-US\")."
+        },
+        "style": {
+          "type": "string",
+          "description": "decimal (default) | percent | compact."
+        },
+        "decimals": {
+          "type": "number",
+          "description": "Fixed number of fraction digits."
+        }
+      },
+      "required": [
+        "number"
+      ]
+    }
+  }
+]
